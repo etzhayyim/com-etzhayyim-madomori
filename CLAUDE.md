@@ -46,7 +46,7 @@ pywasm runtime. madomori mirrors the kuramori 倉守 reference idiom (ADR-260614
 ## Layout
 
 ```
-20-actors/madomori/
+com-etzhayyim-madomori/
 ├── CLAUDE.md                       # this file
 ├── manifest.edn                    # actor manifest (5 cells, 8 gates, Clojure methods)
 ├── data/
@@ -66,9 +66,9 @@ pywasm runtime. madomori mirrors the kuramori 倉守 reference idiom (ADR-260614
 
 ```bash
 # from repo root (classpath = 20-actors, ns = madomori.methods.*)
-bb --classpath 20-actors 20-actors/madomori/methods/test_madomori.clj   # 14 green
-bb --classpath 20-actors -m madomori.methods.analyze                    # → report
-bb --classpath 20-actors -m madomori.methods.datom-emit                 # → EAVT Datom log
+bb run_tests.clj   # full standalone suite
+bb --classpath . -m madomori.methods.analyze                            # → report
+bb --classpath . -m madomori.methods.datom-emit                         # → EAVT Datom log
 ```
 
 ## Why the safety envelope is the heart of the actor

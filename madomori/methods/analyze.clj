@@ -186,7 +186,7 @@
        "GO (both gates pass)?: " (:go? res) "\n"))
 
 (defn -main [& args]
-  (let [path (or (first args) "20-actors/madomori/data/facade.edn")
+  (let [path (or (first args) "data/facade.edn")
         seed (load-seed path)
         res (run-day seed)]
     (print (report-str res))

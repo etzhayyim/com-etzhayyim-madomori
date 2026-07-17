@@ -14,9 +14,9 @@ no deps → runnable under both `bb` and the kotoba pywasm runtime.
 ## Run
 
 ```bash
-bb --classpath 20-actors 20-actors/madomori/methods/test_madomori.clj   # 14 tests / 54 assertions
-bb --classpath 20-actors -m madomori.methods.analyze                    # → façade R0 report
-bb --classpath 20-actors -m madomori.methods.datom-emit                 # → kotoba EAVT Datom log
+bb run_tests.clj   # 39 tests / 147 assertions
+bb --classpath . -m madomori.methods.analyze                            # → façade R0 report
+bb --classpath . -m madomori.methods.datom-emit                         # → kotoba EAVT Datom log
 ```
 
 ## What it does

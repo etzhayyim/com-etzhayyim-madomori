@@ -1,5 +1,5 @@
 ;; madomori 窓守 — test suite (clojure.test, babashka-runnable).
-;; Run: bb --classpath 20-actors 20-actors/madomori/methods/test_madomori.clj
+;; Run: bb run_tests.clj
 ;; Per ADR-2606142020 (madomori R0).
 (ns madomori.methods.test-madomori
   (:require [clojure.test :refer [deftest is testing run-tests]]
@@ -140,7 +140,7 @@
                     ks)))))
 
 ;; ── G3 privacy-by-construction (structural) ──────────────────────────────────
-(def seed (az/load-seed "20-actors/madomori/data/facade.edn"))
+(def seed (az/load-seed "data/facade.edn"))
 
 (deftest imagery-is-on-device-only-and-no-recognition
   (testing "★ G3 — imagery never leaves the device; no person/interior recognition"
@@ -360,7 +360,7 @@
 
 ;; ── run-day full-pipeline (R1 integration) ────────────────────────────────────
 (def ^:private day-res
-  (delay (az/run-day (az/load-seed "20-actors/madomori/data/facade.edn"))))
+  (delay (az/run-day (az/load-seed "data/facade.edn"))))
 
 (deftest run-day-exercises-all-domain-methods
   (testing "R1 — run-day composes EVERY domain method end-to-end"
